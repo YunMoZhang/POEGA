@@ -7,6 +7,13 @@
 - C++ compiler with C++11 support (GCC/Clang) and OpenMP
 - Build tool: `make` or `ninja`
 
+## Quick Start
+```
+git clone https://github.com/YunMoZhang/POEGA.git
+cd POEGA
+```
+
+
 ## Datasets
 The graph datasets used in the evaluation of POEGA can be found in [Datasets](./datasets/Datasets.md). The downloaded graph datasets are typically in edge list format.
 
@@ -37,7 +44,6 @@ Note that the above steps preprocess the full graph dataset. The evolving graph 
 
 **Compilation**
 ```
-cd POEGA
 mkdir build
 cd build
 cmake ..
