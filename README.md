@@ -2,51 +2,66 @@
 
 ## Prerequisites
 
-- CUDA Toolkit 12.4
+Ensure your system meets the following requirements before building POEGA:
+
+- CUDA Toolkit 12.4 or higher
 - CMake >= 3.18
 - C++ compiler with C++11 support (GCC/Clang) and OpenMP
 - Build tool: `make` or `ninja`
 
 ## Quick Start
+
+Clone the repository and navigate to the project root:
 ```
 git clone https://github.com/YunMoZhang/POEGA.git
 cd POEGA
 ```
 
-
 ## Datasets
-The graph datasets used in the evaluation of POEGA can be found in [Datasets](./datasets/Datasets.md). The downloaded graph datasets are typically in edge list format.
 
-POEGA requires the input graph format being **Edge List** stored in a ```.bin``` file. 
+The graph datasets used to evaluate POEGA are detailed in [Datasets](./datasets/Datasets.md). The downloaded datasets are typically provided in an edge list format.
 
-Edge List ```(.el)``` example:
+### Input graph data format
+POEGA requires the input graph format being **Edge List** and stored in a `.bin` file. 
+
+Edge List file (```.el```) example:
 ```
 [src1] [dst1]
 [src2] [dst2]
+...
 ```
+### Format conversion
+We provide a conversion tool to transform raw `.el` edge list files into the required `.bin` format.
 
-To generate ```.bin``` file from the raw ```.el``` Edge List graph data, we provide the conversion tool.
+To build and run the converter:
 ```
 cd tools
 make
-./converter [input .el file] [output file name] [#edges bypassed]
+./converter <input_.el_file> <output_file_name> <#edges_bypassed>
 ```
-For example, to process the sample file provided in ```../datasets/graph_data_sample.el```, run
+(The third parameter specifies the number of header lines to skip in the raw data file.)
+
+**Example**
+
+To convert the provided sample file in `../datasets/graph_data_sample.el`, run
 ```
 ./converter ../datasets/graph_data_sample.el ../datasets/output 1
 ```
-It will generate ```output.bin```.
+This will generate ```output.bin```.
 
-Note that the above steps preprocess the full graph dataset. The evolving graph generation steps that involve the random delta sampling from the full graph are written in the code introduced below, thus not requiring additional processing steps.
+Note on Evolving Graphs: The steps above preprocess the full, static graph dataset. The evolving graph generation (which involves random delta sampling from the full graph) is handled internally by the runtime code, requiring no manual preprocessing.
 
 
-## Running the Experiments
+## Building & Running
 
 **Compilation**
+
+Build the project from the root directory
 ```
 mkdir build
 cd build
 cmake ..
+make -j
 ```
 **Running**
 (to be updated)
@@ -55,6 +70,6 @@ bash ./run.sh
 ```
 
 ## References
-1. Subway (Out-of-GPU-Memory Graph Processing with Minimal Data Transfer). https://github.com/AutomataLab/Subway.
-2. Kickstarter/Graphbolt. https://github.com/pdclab/graphbolt
-2. Scott Beamer. GAP Benchmark Suite. https://github.com/sbeamer/gapbs.
+1. Subway (Out-of-GPU-Memory Graph Processing with Minimal Data Transfer). [Github](https://github.com/AutomataLab/Subway)
+2. Kickstarter/Graphbolt. [Github](https://github.com/pdclab/graphbolt)
+2. Scott Beamer. GAP Benchmark Suite. [Github](https://github.com/sbeamer/gapbs)
