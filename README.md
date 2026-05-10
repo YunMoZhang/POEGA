@@ -64,7 +64,12 @@ cmake ..
 make -j
 ```
 **Running**
-(to be updated)
+
+Set `DATA_PATH` to the directory that contains `.bin` graph files:
+```
+export DATA_PATH=/absolute/path/to/graph_data 
+```
+Then, execute the following command to run all benchmarks:
 ```
 bash ./run.sh
 ```
