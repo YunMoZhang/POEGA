@@ -184,7 +184,8 @@ void Evolving_Graph<E, EL, DL>::ReadGraph(bool fileContainsWeight, int seed)
 		}
 		float read_time = timer.Finish();
 		num_edges_input *= 2;
-		printf("Finished file reading and all edges are stored (%d Nodes, %d Edges) ...\n", num_nodes, num_edges_input);
+		// printf("Finished file reading and all edges are stored (%d Nodes, %d Edges) ...\n", num_nodes, num_edges_input);
+		cout << "Finished file reading and all edges are stored (" << num_nodes << " Nodes, " << num_edges_input << " Edges) ..." << endl;
 		cout << "Time: " << read_time/1000 << " (s)" << endl;
 	}
 	else if(graphFormat == "el" || graphFormat == "wel")
@@ -222,7 +223,7 @@ void Evolving_Graph<E, EL, DL>::ReadGraph(bool fileContainsWeight, int seed)
 			infile.close();
 			num_nodes = max + 1;
 			num_edges_total = edgeCounter;
-			printf("Finished file reading and all edges are stored (%d Nodes, %d Edges) ...\n", num_nodes, num_edges_total);
+			cout << "Finished file reading and all edges are stored (" << num_nodes << " Nodes, " << num_edges_total << " Edges) ..." << endl;
 			std::shuffle(std::begin(edgesInput), std::end(edgesInput), std::default_random_engine(seed));
 		}
 		else

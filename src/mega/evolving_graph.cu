@@ -240,7 +240,7 @@ void Evolving_Graph<E, EL, DL>::ReadGraph(bool fileContainsWeight, int seed)
 			infile.close();
 			num_nodes = max + 1;
 			num_edges_total = edgeCounter;
-			printf("Finished file reading and all edges are stored (%d Nodes, %d Edges) ...\n", num_nodes, num_edges_total);
+			cout << "Finished file reading and all edges are stored (" << num_nodes << " Nodes, " << num_edges_total << " Edges) ...\n";
 			std::shuffle(std::begin(edgesInput), std::end(edgesInput), std::default_random_engine(seed));
 		}
 		else
@@ -396,16 +396,6 @@ void Evolving_Graph<E, EL, DL>::copy_to_device_values()
 	gpuErrorcheck(cudaMemcpy(d_label2, label2, num_nodes * sizeof(bool), cudaMemcpyHostToDevice));
 	gpuErrorcheck(cudaMemcpy(d_value, value, num_nodes * sizeof(uint), cudaMemcpyHostToDevice));
 }
-
-// template <class E, class EL, class DL>
-// void Evolving_Graph<E, EL, DL>::countTotalDegree(bool * label){
-// 	uint total_degree = 0;
-// 	for(uint i = 0; i < num_nodes; i++){
-// 		if(label[i])
-// 			total_degree += (nodePointer[i+1] - nodePointer[i]);
-// 	}
-// 	cout << "\t total degree count: " << total_degree << endl;
-// }
 
 
 template class Evolving_Graph<OutEdge_Evolving, Edge_Union, Edge>;

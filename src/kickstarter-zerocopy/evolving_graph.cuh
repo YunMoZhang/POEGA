@@ -39,7 +39,7 @@ public :
 
 	uint num_nodes;
 	uint num_edges_base;   // the number of edges in curret snapshot
-	uint num_edges_input;
+	size_t num_edges_input;
 	uint num_edges_total;  // the total number of edges, including base and dynamic
 	uint num_edges_add;
 	uint num_edges_del;

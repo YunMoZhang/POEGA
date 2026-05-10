@@ -33,14 +33,13 @@ public:
 	string graphFilePath;
 	string graphFormat;
 	bool isWeighted;
-	bool isLarge;
 
 	ull max_partition_size;
 
 	uint num_nodes;
 	uint num_edges_base;   // the number of edges in curret snapshot
 	ull num_edges_input;
-	uint num_edges_total;  // the total number of edges, including base and dynamic
+	size_t num_edges_total;  // the total number of edges, including base and dynamic
 	uint num_edges_add;
 	uint num_edges_del;
 	uint numActiveNodes;
@@ -48,7 +47,7 @@ public:
 	pvector<EL> edgesInput; // the dynamic graph edge list
 
 	uint *nodePointer; // using NEW with size (num_nodes+1)
-	E *edgeList;		// using cudaMallocHost with size num_edges
+	E *edgeList;	
 	DL **add_edgeList;
 	DL **del_edgeList;
 	uint* deleted_idx;

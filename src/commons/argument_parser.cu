@@ -90,9 +90,6 @@ bool ArgumentParser::Parse()
 			else if(strcmp(argv[i], "--delta_rate_del") == 0) {
 				this->delta_rate_del = stod(string(argv[i+1]))/100;
 			}
-			else if(strcmp(argv[i], "--schedule") == 0) {
-				this->schedule = string(argv[i+1]);
-			}
 			else if (strcmp(argv[i], "--degree_limit") == 0)
 			{
 				this->degree_limit = atoi(argv[i + 1]);
@@ -100,14 +97,6 @@ bool ArgumentParser::Parse()
 			else if (strcmp(argv[i], "--bridge_thresh") == 0)
 			{
 				this->bridge_thresh = atoi(argv[i + 1]);
-			}
-			else if (strcmp(argv[i], "--low_level_thresh") == 0)
-			{
-				this->low_level_thresh = atoi(argv[i + 1]);
-			}
-			else if (strcmp(argv[i], "--degree_limit_DT") == 0)
-			{
-				this->degree_limit_DT = atoi(argv[i + 1]);
 			}
 			else
 			{
