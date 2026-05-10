@@ -419,76 +419,76 @@ target_link_libraries(ks-egraph-cc ks_egraph)
 
 
 # generate executable of core graph for incremental analysis on evolving graphs
-# SET(POEGA "POEGA")
-# SET(SOURCES_COREZEROCOPY 
-#     src/${POEGA}/evolving_graph.cu
-#     src/${POEGA}/evolving_graph.cuh
-#     src/${POEGA}/graph_kernels.cu
-#     src/${POEGA}/graph_kernels.cuh
-#     src/${POEGA}/labels_kernels.cu
-#     src/${POEGA}/labels_kernels.cuh
-#     src/${POEGA}/partitioner.cu
-#     src/${POEGA}/partitioner.cuh
-#     src/${POEGA}/subgraph.cu
-#     src/${POEGA}/subgraph.cuh
-#     src/${POEGA}/subgraph_generator.cu
-#     src/${POEGA}/subgraph_generator.cuh)
-# cuda_add_library(core_zerocopy ${SOURCES_COREZEROCOPY})
-# set_property(TARGET core_zerocopy PROPERTY CUDA_STANDARD 11)
-# set_property(TARGET core_zerocopy PROPERTY CUDA_ARCHITECTURES "86")
-# target_include_directories(core_zerocopy PRIVATE include/commons)
+SET(POEGA "POEGA")
+SET(SOURCES_COREZEROCOPY 
+    src/${POEGA}/evolving_graph.cu
+    src/${POEGA}/evolving_graph.cuh
+    src/${POEGA}/graph_kernels.cu
+    src/${POEGA}/graph_kernels.cuh
+    src/${POEGA}/labels_kernels.cu
+    src/${POEGA}/labels_kernels.cuh
+    src/${POEGA}/partitioner.cu
+    src/${POEGA}/partitioner.cuh
+    src/${POEGA}/subgraph.cu
+    src/${POEGA}/subgraph.cuh
+    src/${POEGA}/subgraph_generator.cu
+    src/${POEGA}/subgraph_generator.cuh)
+cuda_add_library(core_zerocopy ${SOURCES_COREZEROCOPY})
+set_property(TARGET core_zerocopy PROPERTY CUDA_STANDARD 11)
+set_property(TARGET core_zerocopy PROPERTY CUDA_ARCHITECTURES "86")
+target_include_directories(core_zerocopy PRIVATE include/commons)
 
 
-# cuda_add_executable(poega-sssp src/${POEGA}/sssp_poega.cu)
-# set_property(TARGET poega-sssp PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-sssp PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-sssp commons)
-# target_link_libraries(poega-sssp OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-sssp core_zerocopy)
+cuda_add_executable(poega-sssp src/${POEGA}/sssp_poega.cu)
+set_property(TARGET poega-sssp PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-sssp PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-sssp commons)
+target_link_libraries(poega-sssp OpenMP::OpenMP_CXX)
+target_link_libraries(poega-sssp core_zerocopy)
 
 
-# # cuda_add_executable(core-zero-sssp-multistream src/${POEGA}/sssp_cg_concur_multistream.cu)
-# # set_property(TARGET core-zero-sssp-multistream PROPERTY CUDA_STANDARD 11)
-# # set_target_properties(core-zero-sssp-multistream PROPERTIES CUDA_ARCHITECTURES "86")
-# # target_link_libraries(core-zero-sssp-multistream commons)
-# # target_link_libraries(core-zero-sssp-multistream OpenMP::OpenMP_CXX)
-# # target_link_libraries(core-zero-sssp-multistream core_zerocopy)
+# cuda_add_executable(core-zero-sssp-multistream src/${POEGA}/sssp_cg_concur_multistream.cu)
+# set_property(TARGET core-zero-sssp-multistream PROPERTY CUDA_STANDARD 11)
+# set_target_properties(core-zero-sssp-multistream PROPERTIES CUDA_ARCHITECTURES "86")
+# target_link_libraries(core-zero-sssp-multistream commons)
+# target_link_libraries(core-zero-sssp-multistream OpenMP::OpenMP_CXX)
+# target_link_libraries(core-zero-sssp-multistream core_zerocopy)
 
 
-# cuda_add_executable(poega-ssnp src/${POEGA}/ssnp_poega.cu)
-# set_property(TARGET poega-ssnp PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-ssnp PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-ssnp commons)
-# target_link_libraries(poega-ssnp OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-ssnp core_zerocopy)
+cuda_add_executable(poega-ssnp src/${POEGA}/ssnp_poega.cu)
+set_property(TARGET poega-ssnp PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-ssnp PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-ssnp commons)
+target_link_libraries(poega-ssnp OpenMP::OpenMP_CXX)
+target_link_libraries(poega-ssnp core_zerocopy)
 
 
-# cuda_add_executable(poega-sswp src/${POEGA}/sswp_poega.cu)
-# set_property(TARGET poega-sswp PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-sswp PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-sswp commons)
-# target_link_libraries(poega-sswp OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-sswp core_zerocopy)
+cuda_add_executable(poega-sswp src/${POEGA}/sswp_poega.cu)
+set_property(TARGET poega-sswp PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-sswp PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-sswp commons)
+target_link_libraries(poega-sswp OpenMP::OpenMP_CXX)
+target_link_libraries(poega-sswp core_zerocopy)
 
 
-# cuda_add_executable(poega-viterbi src/${POEGA}/viterbi_poega.cu)
-# set_property(TARGET poega-viterbi PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-viterbi PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-viterbi commons)
-# target_link_libraries(poega-viterbi OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-viterbi core_zerocopy)
+cuda_add_executable(poega-viterbi src/${POEGA}/viterbi_poega.cu)
+set_property(TARGET poega-viterbi PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-viterbi PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-viterbi commons)
+target_link_libraries(poega-viterbi OpenMP::OpenMP_CXX)
+target_link_libraries(poega-viterbi core_zerocopy)
 
 
-# cuda_add_executable(poega-bfs src/${POEGA}/bfs_poega.cu)
-# set_property(TARGET poega-bfs PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-bfs PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-bfs commons)
-# target_link_libraries(poega-bfs OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-bfs core_zerocopy)
+cuda_add_executable(poega-bfs src/${POEGA}/bfs_poega.cu)
+set_property(TARGET poega-bfs PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-bfs PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-bfs commons)
+target_link_libraries(poega-bfs OpenMP::OpenMP_CXX)
+target_link_libraries(poega-bfs core_zerocopy)
 
-# cuda_add_executable(poega-cc src/${POEGA}/cc_poega.cu)
-# set_property(TARGET poega-cc PROPERTY CUDA_STANDARD 11)
-# set_target_properties(poega-cc PROPERTIES CUDA_ARCHITECTURES "86")
-# target_link_libraries(poega-cc commons)
-# target_link_libraries(poega-cc OpenMP::OpenMP_CXX)
-# target_link_libraries(poega-cc core_zerocopy)
+cuda_add_executable(poega-cc src/${POEGA}/cc_poega.cu)
+set_property(TARGET poega-cc PROPERTY CUDA_STANDARD 11)
+set_target_properties(poega-cc PROPERTIES CUDA_ARCHITECTURES "86")
+target_link_libraries(poega-cc commons)
+target_link_libraries(poega-cc OpenMP::OpenMP_CXX)
+target_link_libraries(poega-cc core_zerocopy)
