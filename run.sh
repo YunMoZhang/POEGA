@@ -3,8 +3,9 @@ make clean
 make -j
 cd ..
 # Set DATA_PATH before running to point at your graph data directory.
-: "${DATA_PATH:=${PWD}/graph_data}"
-# export CUDA_VISIBLE_DEVICES= <your device id>
+# export DATA_PATH=<your graph data directory>
+# (Optional) specify the GPU device to run
+# export CUDA_VISIBLE_DEVICES=<your device id>
 
 #===========================================================================
 # ================================Kickstarter-UM=======================
