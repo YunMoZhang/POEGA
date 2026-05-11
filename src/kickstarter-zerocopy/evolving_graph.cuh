@@ -35,7 +35,6 @@ public :
 	string graphFilePath;
 	string graphFormat;
 	bool isWeighted;
-	bool isLarge;
 
 	uint num_nodes;
 	uint num_edges_base;   // the number of edges in curret snapshot

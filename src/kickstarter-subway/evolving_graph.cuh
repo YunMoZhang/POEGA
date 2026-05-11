@@ -33,7 +33,6 @@ public:
 	string graphFilePath;
 	string graphFormat;
 	bool isWeighted;
-	bool isLarge;
 
 	ull max_partition_size;
 
