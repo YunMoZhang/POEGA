@@ -20,7 +20,6 @@ int main(int argc, char** argv)
 	ArgumentParser arguments(argc, argv, true, false);
 	
 	Timer timer, timer_sub, timer_sub2;
-	float sub_time;
 	timer.Start();
 	
 	Evolving_Graph<OutEdgeWeighted_Evolving, EdgeWeighted_Union, EdgeWeighted> graph(arguments.input, true, arguments.numSnapshots, arguments.init_percentage, arguments.delta_rate_add, arguments.delta_rate_del);
@@ -93,8 +92,6 @@ int main(int argc, char** argv)
 		timer_sub2.Start();
 		subgen.generate(graph, subgraph);
 		float gen_time = timer_sub2.Finish();
-
-		sub_time = timer_sub.Finish();
 	}	
 	
 	float runtime = timer.Finish();

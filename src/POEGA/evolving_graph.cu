@@ -612,7 +612,6 @@ void Evolving_Graph<E, EL, DL>::CreateProxyGraphUnionCSR(int degree_limit, uint 
 	// }
 
 	if(num_edges_core < num_edges_base * 0.05){
-		int cnt = 0;
 		int max_deg = 0;
 		int max_deg_node = 0;
 		for(uint v : low_level_vertices){

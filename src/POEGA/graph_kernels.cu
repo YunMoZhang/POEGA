@@ -6355,7 +6355,6 @@ __global__ void bfs_kernel_concurrent_optimized_transpose(unsigned int numActive
                                                 int numSnap)
 {
     __shared__ uint sm_dst[WARPS_PER_BLOCK][WARP_SIZE];
-    __shared__ uint sm_w[WARPS_PER_BLOCK][WARP_SIZE];
     __shared__ unsigned long long sm_bmp[WARPS_PER_BLOCK][WARP_SIZE];
 
     int tId = blockDim.x * blockIdx.x + threadIdx.x;
@@ -6379,7 +6378,6 @@ __global__ void bfs_kernel_concurrent_optimized_transpose(unsigned int numActive
         {
             OutEdgeWeighted_Evolving e = edgeList[edge_idx];
             sm_dst[warpId][laneId] = e.end;
-            sm_w[warpId][laneId] = e.w8;
             sm_bmp[warpId][laneId] = e.bitmap >> 1; 
         }
         
@@ -6390,7 +6388,6 @@ __global__ void bfs_kernel_concurrent_optimized_transpose(unsigned int numActive
         for (uint k = 0; k < tile_size; k++)
         {
             uint dst = sm_dst[warpId][k];
-            uint w = sm_w[warpId][k];
             ull bmp = sm_bmp[warpId][k];
 
             for (int sid = laneId; sid < numSnap; sid += WARP_SIZE)
@@ -7308,7 +7305,6 @@ __global__ void cc_kernel_concurrent_optimized_transpose(unsigned int numActiveN
                                                 int numSnap)
 {
     __shared__ uint sm_dst[WARPS_PER_BLOCK][WARP_SIZE];
-    __shared__ uint sm_w[WARPS_PER_BLOCK][WARP_SIZE];
     __shared__ unsigned long long sm_bmp[WARPS_PER_BLOCK][WARP_SIZE];
 
     int tId = blockDim.x * blockIdx.x + threadIdx.x;
