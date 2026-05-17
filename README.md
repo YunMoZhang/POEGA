@@ -9,6 +9,32 @@ Ensure your system meets the following requirements before building POEGA:
 - C++ compiler with C++11 support (GCC/Clang) and OpenMP
 - Build tool: `make` or `ninja`
 
+**Hardware Environment**
+
+This framework has been evaluated on an NVIDIA RTX A4000 GPU (16 GB memory) and an NVIDIA A6000 Ada GPU (48 GB memory). It should generally support other NVIDIA GPUs with comparable memory capacities.
+
+## Directory Structure
+The repository layout and brief descriptions:
+
+```
+├── CMakeLists.txt              # CMake build configuration
+├── README.md                   # Project overview and usage guidelines
+├── run.sh                      # Script to run the benchmark suite and experiments.
+├── datasets/                   # Graph dataset preparation guides and a sampled input format
+├── include/                    # Public header files
+├── src/                        # POEGA and seven compared methods source code
+│   ├── commons/                # General shared source utilities
+│   ├── egraph/                 
+│   ├── kickstarter-um/        
+│   ├── kickstarter-subway/     
+│   ├── kickstarter-zerocopy/  
+│   ├── commongraph-um/        
+│   ├── commongraph-zerocopy/   
+│   ├── mega/              
+│   └── POEGA/                 
+└── tools/                      # Utility programs and optional result processing scripts
+```
+
 ## Quick Start
 
 Clone the repository and navigate to the project root:
@@ -54,25 +80,56 @@ Note on Evolving Graphs: The steps above preprocess the full, static graph datas
 
 ## Building & Running
 
-**Compilation**
+### Compilation
 
-Build the project from the root directory
+Build the project from the root directory using CMake:
 ```
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
 make -j
 ```
-**Running**
-
-Set `DATA_PATH` to the directory that contains `.bin` graph files:
+### Running
+Before executing the experiments, set the `DATA_PATH` environment variable to point to the directory containing your preprocessed `.bin` graph files:
 ```
 export DATA_PATH=/absolute/path/to/graph_data 
 ```
-Then, execute the following command to run all benchmarks:
+Then, run the script to execute the entire benchmark suite:
 ```
 bash ./run.sh
 ```
+This script executes 6 graph algorithms across 5 different datasets for **POEGA** and 7 other comparative baselines.
+
+**Supported Algorithms and Baselines**
+
+Graph algorithms:
+- SSSP (Single-Source Shortest Path)
+- SSNP (Single-Source Nearest Path)
+- SSWP (Single-Source Widest Path)
+- BFS (Breadth-First Search)
+- CC (Weakly Connected Components)
+- Viterbi
+
+Evaluated Frameworks:
+- POEGA
+- Re-evaluation based method: `egraph`
+- Streaming-based incremental analysis methods: `kickstarter-um` (KS-UM), `kickstarter-subway` (KS-SW), `kickstarter-zerocopy` (Grapin)
+- Batch-based incremental analysis methods: `commongraph-um` (CG-UM), `commongraph-zerocopy` (CG-ZC), `mega`
+
+Note that each benchmark includes the evolving graph generation (offline) and evolving graph analytics (online).
+
+**Parameter Explanation**
+
+All frameworks accept a standard set of parameters to configure the benchmark:
+```
+./<framework>-<algo> --input <data_path> --source <source_node> --init_percent <init_ratio> --delta_rate_add <add_rate> --delta_rate_del <del_rate> --snap <num_snapshots>
+```
+- `--init_percent`: The percentage of the graph used as the base graph (e.g., 50 for 50%).
+
+- `--delta_rate_add / --delta_rate_del`: The ratio of edges added or deleted per snapshot relative to the full graph (e.g., 0.05 for 0.05%).
+
+For POEGA-specific executions, the optional `--degree_limit` parameter can be specified to define the degree threshold for identifying high-degree nodes in proxy graph generation.
+
+
 
 ## References
 1. Subway (Out-of-GPU-Memory Graph Processing with Minimal Data Transfer). [Github](https://github.com/AutomataLab/Subway)

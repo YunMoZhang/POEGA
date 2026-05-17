@@ -370,47 +370,47 @@ cd ..
 # SSSP
 
 # echo "SSSP"
-./build/bin/poega-sssp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-sssp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-sssp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000 
-./build/bin/poega-sssp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800
-./build/bin/poega-sssp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000
+./build/bin/poega-sssp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-sssp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-sssp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-sssp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 
+./build/bin/poega-sssp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 
 
 
 # SSNP
 # echo "SSNP"
-./build/bin/poega-ssnp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-ssnp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-ssnp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000
-./build/bin/poega-ssnp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800
-./build/bin/poega-ssnp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000 
+./build/bin/poega-ssnp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-ssnp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-ssnp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-ssnp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32
+./build/bin/poega-ssnp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 
 
 # SSWP
-./build/bin/poega-sswp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-sswp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-sswp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000
-./build/bin/poega-sswp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800 
-./build/bin/poega-sswp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000 
+./build/bin/poega-sswp --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-sswp --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800
+./build/bin/poega-sswp --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-sswp --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 
+./build/bin/poega-sswp --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000  
 
 
 # Viterbi
-./build/bin/poega-viterbi --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-viterbi --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-viterbi --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000
-./build/bin/poega-viterbi --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800
-./build/bin/poega-viterbi --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000
+./build/bin/poega-viterbi --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-viterbi --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800
+./build/bin/poega-viterbi --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-viterbi --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 
+./build/bin/poega-viterbi --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000
 
 # BFS
-./build/bin/poega-bfs --input "$DATA_PATH/uk-2005.bin" --source  34054405  --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-bfs --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-bfs --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000
-./build/bin/poega-bfs --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800
-./build/bin/poega-bfs --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000 
+./build/bin/poega-bfs --input "$DATA_PATH/uk-2005.bin" --source  34054405  --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-bfs --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-bfs --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-bfs --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32
+./build/bin/poega-bfs --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000
  
 
 # CC
-./build/bin/poega-cc --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800
-./build/bin/poega-cc --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 800 
-./build/bin/poega-cc --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 --bridge_thresh 8000 
-./build/bin/poega-cc --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32 --bridge_thresh 800
-./build/bin/poega-cc --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000 --bridge_thresh 10000
+./build/bin/poega-cc --input "$DATA_PATH/uk-2005.bin" --source 34054405 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800 
+./build/bin/poega-cc --input "$DATA_PATH/it-2004.bin" --source 26424103 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800
+./build/bin/poega-cc --input "$DATA_PATH/twitter.bin" --source 16190898 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 800
+./build/bin/poega-cc --input "$DATA_PATH/sk-2005.bin" --source 48932207 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --degree_limit 800 --snap 32
+./build/bin/poega-cc --input "$DATA_PATH/subdomain.bin" --source 100640172 --init_percent 50 --delta_rate_add 0.05 --delta_rate_del 0.05 --snap 32 --degree_limit 2000
