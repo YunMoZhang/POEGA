@@ -11,7 +11,7 @@ Ensure your system meets the following requirements before building POEGA:
 
 **Hardware Environment**
 
-This framework has been evaluated on an NVIDIA RTX A4000 GPU (16 GB memory) and an NVIDIA A6000 Ada GPU (48 GB memory). It should generally support other NVIDIA GPUs with comparable memory capacities.
+This framework has been evaluated on an NVIDIA RTX A4000 GPU (16 GB memory) and an NVIDIA A6000 Ada GPU (48 GB memory). It might support other NVIDIA GPUs with comparable memory capacities.
 
 ## Directory Structure
 The repository layout and brief descriptions:
@@ -121,7 +121,7 @@ Note that each benchmark includes the evolving graph generation (offline) and ev
 
 All frameworks accept a standard set of parameters to configure the benchmark:
 ```
-./<framework>-<algo> --input <data_path> --source <source_node> --init_percent <init_ratio> --delta_rate_add <add_rate> --delta_rate_del <del_rate> --snap <num_snapshots>
+./<framework>-<algo> --input <graph_data> --source <source_node> --init_percent <init_ratio> --delta_rate_add <add_rate> --delta_rate_del <del_rate> --snap <num_snapshots>
 ```
 - `--init_percent`: The percentage of the graph used as the base graph (e.g., 50 for 50%).
 
