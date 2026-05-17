@@ -533,7 +533,7 @@ void Evolving_Graph<E, EL, DL>::TransferValuesToDevice()
 }
 
 template <class E, class EL, class DL>
-void Evolving_Graph<E, EL, DL>::CreateProxyGraphUnionCSR(int degree_limit, uint bridge_thresh)
+void Evolving_Graph<E, EL, DL>::CreateProxyGraphUnionCSR(int degree_limit)
 {
 	gpuErrorcheck(cudaPeekAtLastError());
 	cout << "\nCreating proxy graph CSR..." << endl;

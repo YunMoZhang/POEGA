@@ -45,7 +45,7 @@ public:
 
 	void LoadCoreUnionCSR();
 
-	void CreateProxyGraphUnionCSR(int degree_limit = 800, uint bridge_thresh = 800);
+	void CreateProxyGraphUnionCSR(int degree_limit = 800);
 
 	void CreateLowWeightCoreUnionCSR(int seed); // for testing wonderland
 	void CreateRandomCoreUnionCSR(int seed);

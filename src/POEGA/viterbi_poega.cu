@@ -30,7 +30,7 @@ void two_stage_analysis(Evolving_Graph<OutEdgeWeighted_Evolving, EdgeWeighted_Un
 	if (!prop.canMapHostMemory)
     	exit(0);
 
-	graph.CreateProxyGraphUnionCSR(arguments.degree_limit, arguments.bridge_thresh);
+	graph.CreateProxyGraphUnionCSR(arguments.degree_limit);
 	// graph.CreateRandomCoreUnionCSR(seed);
 
 	cout << "\n============Beginning two-stage analysis============" << endl;
