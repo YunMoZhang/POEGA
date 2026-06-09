@@ -1,6 +1,6 @@
 # POEGA
 
-This repository includes the source code for POEGA, an efficient and scalable framework for out-of-GPU-memory evolving graph processing. It also provides implementations of other state-of-the-art comparative approaches. For more technical details, please refer to our paper: *Efficient GPU-centric Evolving Graph Processing at Scale* (Paper Link TBD).
+This repository includes the source code for POEGA, an efficient and scalable framework for out-of-GPU-memory evolving graph processing. It also provides implementations of other state-of-the-art comparative approaches. For more technical details, please refer to our OSDI 2026 paper: *Efficient GPU-centric Evolving Graph Processing at Scale* (Paper Link TBD).
 
 ## Citing POEGA
 ```
