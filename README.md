@@ -2,13 +2,6 @@
 
 This repository includes the source code for POEGA, an efficient and scalable framework for out-of-GPU-memory evolving graph processing. It also provides implementations of other state-of-the-art comparative approaches. For more technical details, please refer to our OSDI 2026 paper: *Efficient GPU-centric Evolving Graph Processing at Scale* ([Paper Link](https://www.usenix.org/conference/osdi26/presentation/zhang-yunmo)).
 
-## Citing POEGA
-```
-@inproceedings{
-    TBD
-}
-```
-
 ## Prerequisites
 
 Ensure your system meets the following requirements before building POEGA:
@@ -138,7 +131,17 @@ All frameworks accept a standard set of parameters to configure the benchmark:
 
 For POEGA-specific executions, the optional `--degree_limit` parameter can be specified to define the degree threshold for identifying high-degree nodes in proxy graph generation.
 
-
+## Citing POEGA
+If you use POEGA or its codebase in your work, please cite our paper.
+```
+@inproceedings{zhang2026efficient,
+  title={Efficient $\{$GPU-Centric$\}$ Evolving Graph Processing at Scale},
+  author={Zhang, Yunmo and Huang, Jiacheng and Yin, Xizhe and Qiu, Junqiao and Xu, Hong and Xue, Chun Jason},
+  booktitle={20th USENIX Symposium on Operating Systems Design and Implementation (OSDI 26)},
+  pages={1585--1604},
+  year={2026}
+}
+```
 
 ## References
 1. Subway (Out-of-GPU-Memory Graph Processing with Minimal Data Transfer). [Github](https://github.com/AutomataLab/Subway)
