@@ -1,3 +1,5 @@
+
+
 # POEGA
 
 This repository includes the source code for POEGA, an efficient and scalable framework for out-of-GPU-memory evolving graph processing. It also provides implementations of other state-of-the-art comparative approaches. For more technical details, please refer to our OSDI 2026 paper: **Efficient GPU-centric Evolving Graph Processing at Scale** ([Link](https://www.usenix.org/conference/osdi26/presentation/zhang-yunmo)).
@@ -65,7 +67,7 @@ To build and run the converter:
 ```
 cd tools
 make
-./converter <input_.el_file> <output_file_name> <#edges_bypassed>
+./converter <input.el_file> <output_file_name> <#edges_bypassed>
 ```
 (The third parameter specifies the number of header lines to skip in the raw data file.)
 
